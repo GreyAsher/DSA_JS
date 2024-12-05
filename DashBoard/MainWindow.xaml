@@ -1,0 +1,69 @@
+﻿<Window x:Class="DashBoard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DashBoard"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!-- Define Columns -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <!-- Navigation Column -->
+            <ColumnDefinition Width="*"/>
+            <!-- Feed Column -->
+            <ColumnDefinition Width="300"/>
+            <!-- Side Panel Column -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Navigation Panel -->
+        <StackPanel Grid.Column="0" Background="#3b5998">
+            <TextBlock FontSize="20" Foreground="White" Margin="0,0,0,20">My Dashboard</TextBlock>
+            <Button Content="Profile" Margin="0,5" Padding="5" Click="Button_Click"/>
+            <Button Content="Friends" Margin="0,5" Padding="5"/>
+            <Button Content="Apply List" Margin="0,5" Padding="5"/>
+            <Button Content="Notifications" Margin="0,5" Padding="5"/>
+            <Button Content="Settings" Margin="0,5" Padding="5"/>
+            <Button Content="Log Out" Margin="0,5" Padding="5"/>
+        </StackPanel>
+
+        <!-- Feed Section -->
+        <ScrollViewer Grid.Column="1" Background="#f0f2f5" Padding="10">
+            <StackPanel>
+                <!-- New Post Box -->
+                <Border Background="White" Padding="10" Margin="0,0,0,10" CornerRadius="5">
+                    <TextBox Height="60" Text="What's on your mind?" Foreground="Gray"/>
+                </Border>
+
+                <!-- Example Post -->
+                <Border Background="White" Padding="10" Margin="0,0,0,10" CornerRadius="5">
+                    <StackPanel>
+                        <TextBlock FontWeight="Bold">User 1</TextBlock>
+                        <TextBlock TextWrapping="Wrap">This is an example post in the feed.</TextBlock>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="White" Padding="10" Margin="0,0,0,10" CornerRadius="5">
+                    <StackPanel>
+                        <TextBlock FontWeight="Bold">User 2</TextBlock>
+                        <TextBlock TextWrapping="Wrap">Another post with some content here.</TextBlock>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Side Panel -->
+        <StackPanel Grid.Column="2" Background="#e9ebee">
+            <TextBlock FontSize="18" FontWeight="Bold" Margin="0,0,0,10">Friend Requests</TextBlock>
+            <Border Background="White" Padding="10" Margin="0,0,0,10" CornerRadius="5">
+                <TextBlock>John Doe</TextBlock>
+           
+            </Border>
+
+            <TextBlock FontSize="18" FontWeight="Bold" Margin="0,20,0,10">Contacts</TextBlock>
+            <TextBlock>Jane Smith</TextBlock>
+            <TextBlock>Mark Taylor</TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

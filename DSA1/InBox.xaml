@@ -1,0 +1,122 @@
+﻿<Window x:Class="DSA1.InBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DSA1"
+        mc:Ignorable="d"
+        Title="InBox" Height="700" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <!-- Navigation Pane -->
+            <ColumnDefinition Width="*"/>
+            <!-- Main Content -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Navigation Pane -->
+        <StackPanel Grid.Column="0" Background="#F7F7F7">
+            <Button Content="Compose" Margin="10" Height="50" Background="#0078D4" Foreground="White" FontWeight="Bold" HorizontalAlignment="Stretch"/>
+
+            <ListBox Margin="10,20,10,0">
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Primary" FontWeight="Bold" Margin="10,0"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Social" Margin="10,0"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Promotions" Margin="10,0"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <Separator/>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Starred" Margin="10,0"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Sent" Margin="10,0"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Drafts" Margin="10,0"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Trash" Margin="10,0"/>
+                    </StackPanel>
+                </ListBoxItem>
+            </ListBox>
+        </StackPanel>
+
+        <!-- Main Content -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Header -->
+                <RowDefinition Height="*"/>
+                <!-- Content -->
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <DockPanel Background="#F7F7F7" Margin="0,0,0,10" Height="50">
+                <!-- Back Button -->
+                <Button Content="Back" 
+                        Width="80" 
+                        Height="30" 
+                        Background="#0078D4" 
+                        Foreground="White" 
+                        FontWeight="Bold" 
+                        Margin="10,0" 
+                        VerticalAlignment="Center" 
+                        HorizontalAlignment="Left"
+                        Click="BackButton_Click"/>
+
+                <TextBox x:Name="SearchTextBox" Width="400" Height="30" Margin="10" VerticalAlignment="Center"/>
+                <Button Content="Filter" Margin="5" Background="Transparent" Foreground="#0078D4" VerticalAlignment="Center"/>
+            </DockPanel>
+
+            <!-- Content -->
+            <Grid Grid.Row="1" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <!-- Message List -->
+                    <ColumnDefinition Width="3*"/>
+                    <!-- Message Content -->
+                </Grid.ColumnDefinitions>
+
+                <!-- Message List -->
+                <ListView x:Name="MessagesListView" Grid.Column="0" Background="White" BorderBrush="#E5E5E5" BorderThickness="1">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="#E5E5E5" Padding="5">
+                                <StackPanel Orientation="Vertical" Margin="10,5">
+                                    <TextBlock Text="{Binding Sender}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Subject}" Foreground="#555" Margin="0,5,0,0"/>
+                                    <TextBlock Text="{Binding Snippet}" Foreground="#888" FontSize="12"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <!-- Message Content -->
+                <StackPanel Grid.Column="1" Background="#F7F7F7" >
+                    <TextBlock Text="Message Content" FontSize="16" FontWeight="Bold" Margin="0,0,0,20"/>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <TextBlock x:Name="MessageContentTextBlock" Text="Select a message to view its content." TextWrapping="Wrap" Foreground="#444" FontSize="14"/>
+                    </ScrollViewer>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

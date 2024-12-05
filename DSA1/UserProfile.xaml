@@ -1,0 +1,170 @@
+﻿<Window x:Class="DSA1.UserProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DSA1"
+        mc:Ignorable="d"
+        Title="UserProfile" Height="1080" Width="1024">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Profile Header -->
+        <Border Grid.Row="0" Background="#800000" Padding="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Back Button -->
+                <Button Content="Back" 
+                    Width="80" 
+                    Height="30" 
+                    Background="#d4ac0d" 
+                    Foreground="White" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" 
+                    Click="BackButton_Click" 
+                    Margin="10,0">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+                <!-- Profile Information -->
+                <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="-140,0,0,0">
+                    <TextBlock x:Name="Full_Name" Text="Colton Randolph" FontWeight="Bold" FontSize="26" Foreground="White" HorizontalAlignment="Center" Margin="10,0,0,0" />
+                    <TextBlock x:Name="Job_Title_txtbox" Text="Content strategist and conversion copywriter" FontSize="16" Foreground="White" Margin="10,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <TextBlock x:Name="Address_txtbox" Text="Wichita, Kansas Metropolitan Area" FontSize="14" Foreground="White" Margin="10,5,0,10" HorizontalAlignment="Center" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto">
+                        <Button Content="Connections List" 
+                            Background="#d4ac0d" 
+                            Foreground="White" 
+                            Margin="10,5,5,5" 
+                            Padding="10,5" 
+                            Width="120" 
+                            Click="showFriendList_btn" Height="25">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        BorderThickness="{TemplateBinding BorderThickness}" 
+                                        CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <Button Content="Connect" 
+                            Background="#d4ac0d" 
+                            Foreground="White" 
+                            Margin="10,5,5,5" 
+                            Padding="10,5" 
+                            Width="120" 
+                            Click="AddFriend_Btn" 
+                            HorizontalAlignment="Center">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        BorderThickness="{TemplateBinding BorderThickness}" 
+                                        CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <Button Content="Message" 
+        Background="#d4ac0d" 
+        Foreground="White" 
+        Margin="10,5,5,5" 
+        Padding="10,5" 
+        Width="120" 
+        HorizontalAlignment="Center">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" 
+                    BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}" 
+                    CornerRadius="10">
+                                        <ContentPresenter HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Profile Details -->
+        <ScrollViewer Grid.Row="1" Margin="20">
+            <StackPanel>
+                <!-- About Section -->
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,20,0,10">
+                    <TextBlock Text="About" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" />
+                    <Button x:Name="abt_you_btn" Content="Edit" Width="100" Margin="10,0,0,0" HorizontalAlignment="Right" Click="abt_you_btn_Click" />
+                </StackPanel>
+                <Border BorderBrush="#D3D3D3" BorderThickness="1" Padding="10" CornerRadius="5" Background="#F9F9F9">
+                    <RichTextBox x:Name="About_RichTextBox" Height="164" IsReadOnly="True">
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run Text=""/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                </Border>
+
+                <!-- Experience Section -->
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,20,0,10">
+                    <TextBlock Text="Experience" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" />
+                    <Button x:Name="Edit_Experience_btn" Content="Edit" Width="100" Margin="10,0,0,0" HorizontalAlignment="Right" Click="Edit_Experience_btn_Click" />
+                </StackPanel>
+                <Border BorderBrush="#D3D3D3" BorderThickness="1" Padding="10" CornerRadius="5" Background="#F9F9F9" Margin="0,0,0,20">
+                    <ScrollViewer Height="200">
+                        <StackPanel Orientation="Vertical">
+                            <TextBox Text="Technical Writer - Proxycurl" FontWeight="Bold" FontSize="16" Margin="0,5,0,5" IsReadOnly="True" x:Name="ExperienceTextBox1" />
+                            <TextBox Text="Freelance Copywriter - Colton Randolph" FontWeight="Bold" FontSize="16" Margin="0,5,0,5" IsReadOnly="True" x:Name="ExperienceTextBox2" />
+                            <TextBox Text="May 2016 - Present | 7 years 6 months" FontSize="14" Margin="0,5,0,5" IsReadOnly="True" x:Name="ExperienceTextBox3" />
+                            <TextBox Text="Created conversion-focused copy for various clients." FontSize="14" TextWrapping="Wrap" Margin="0,5,0,5" IsReadOnly="True" x:Name="ExperienceTextBox4" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+
+                <!-- Education Section -->
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,20,0,10">
+                    <TextBlock Text="Education" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" />
+                    <Button x:Name="Education_Edit_btn" Content="Edit" Width="100" Margin="10,0,0,0" HorizontalAlignment="Right" Click="Education_Edit_btn_Click" />
+                </StackPanel>
+                <Border BorderBrush="#D3D3D3" BorderThickness="1" Padding="10" CornerRadius="5" Background="#F9F9F9">
+                    <ScrollViewer Height="200">
+                        <StackPanel Orientation="Vertical">
+                            <TextBox Text="Bachelor of Arts in English - University of Kansas" FontSize="16" Margin="0,5,0,5" IsReadOnly="True" x:Name="EducationTextBox1" />
+                            <TextBox Text="Graduated in 2015" FontSize="14" Margin="0,5,0,5" IsReadOnly="True" x:Name="EducationTextBox2" />
+                            <TextBox Text="Relevant Courses: Creative Writing, Technical Communication" FontSize="14" TextWrapping="Wrap" Margin="0,5,0,5" IsReadOnly="True" x:Name="EducationTextBox3" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

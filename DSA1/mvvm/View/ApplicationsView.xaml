@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="modernUIDesign.MVVM.View.ApplicationsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:modernUIDesign.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="White">
+    <Grid>
+
+        <StackPanel Background="#a40000" Height="60" VerticalAlignment="Top">
+            <TextBlock Text="Applications" FontSize="20" FontWeight="Bold" 
+                       Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,15,0,0"/>
+        </StackPanel>
+
+
+        <ScrollViewer Margin="10,70,10,10">
+            <StackPanel>
+
+                <Border BorderBrush="#DDD" BorderThickness="1" CornerRadius="8" Padding="10" Margin="0,0,0,10" Background="White">
+                    <StackPanel>
+                        <TextBlock Text="Software Developer Position" FontWeight="Bold" FontSize="16" Foreground="#333"/>
+                        <TextBlock Text="Company: ABC Tech Solutions" FontSize="14" Foreground="#666" Margin="0,5,0,0"/>
+                        <TextBlock Text="Applied on: November 15, 2024" FontSize="12" Foreground="#999"/>
+                        <TextBlock Text="Status: Pending" FontSize="12" Foreground="#FF9800" FontWeight="Bold" Margin="0,5,0,0"/>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                            <Button Content="View Details" Width="100" Height="30" Margin="5" Background="#4CAF50" Foreground="White"/>
+                            <Button Content="Withdraw" Width="100" Height="30" Margin="5" Background="#F44336" Foreground="White"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="#DDD" BorderThickness="1" CornerRadius="8" Padding="10" Margin="0,0,0,10" Background="White">
+                    <StackPanel>
+                        <TextBlock Text="Project Manager Position" FontWeight="Bold" FontSize="16" Foreground="#333"/>
+                        <TextBlock Text="Company: XYZ Innovations" FontSize="14" Foreground="#666" Margin="0,5,0,0"/>
+                        <TextBlock Text="Applied on: December 1, 2024" FontSize="12" Foreground="#999"/>
+                        <TextBlock Text="Status: Under Review" FontSize="12" Foreground="#FF9800" FontWeight="Bold" Margin="0,5,0,0"/>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                            <Button Content="View Details" Width="100" Height="30" Margin="5" Background="#4CAF50" Foreground="White"/>
+                            <Button Content="Withdraw" Width="100" Height="30" Margin="5" Background="#F44336" Foreground="White"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="modernUIDesign.MVVM.View.JobPostingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:modernUIDesign.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#a40000">
+
+    <Grid Margin="20">
+
+        <StackPanel Grid.Column="1" Margin="20">
+            <TextBlock Text="My Profile" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Foreground="White"
+                       Margin="85,0,0,20"/>
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <StackPanel Grid.Column="0" HorizontalAlignment="CEnter">
+                    <Ellipse Width="100" Height="100" Fill="#DDD" Stroke="#CCC">
+
+                    </Ellipse>
+                    <Button Content="Edit" Width="80" Margin="10" 
+                            Background="#ffd700" Foreground="Black"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="20,0,0,0">
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel>
+                            <TextBlock Text="First Name" Foreground="White"/>
+                            <TextBox Text="Arthur" Margin="0,5"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Last Name" Foreground="White"/>
+                            <TextBox Text="Nancy" Margin="0,5"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <StackPanel>
+                        <TextBlock Text="Email" Foreground="White"/>
+                        <TextBox Text="bradley.ortiz@gmail.com" Margin="0,5"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <TextBlock Text="Phone" Foreground="White"/>
+                        <TextBox Text="477-046-1827" Margin="0,5"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <TextBlock Text="Address" Foreground="White"/>
+                        <TextBox Text="116 Jaskolski Stravane Suite 883" Margin="0,5"/>
+                    </StackPanel>
+
+                    <Grid Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel>
+                            <TextBlock Text="Date of Birth" Foreground="White"/>
+                            <TextBox Text="September 31, 1990" Margin="0,5"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Gender" Foreground="White"/>
+                            <TextBox Text="Male" Foreground="Black" Margin="0,5"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+
+            <Button Content="Save" Width="100" Height="30" HorizontalAlignment="Right" Margin="0,20,0,0"
+                    Background="#ffd700" Foreground="Black"/>
+        </StackPanel>
+    </Grid>
+
+</UserControl>

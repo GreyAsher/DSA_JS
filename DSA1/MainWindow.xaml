@@ -1,0 +1,104 @@
+﻿<Window x:Class="DSA1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DSA1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sign Up Section -->
+        <Border Grid.Column="0" Background="#800000" Padding="20" VerticalAlignment="Stretch">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="SignUp" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                <TextBlock Text="SignUp Now To Connect With Us!" FontSize="14" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                <Border CornerRadius="10" Background="#d4ac0d" HorizontalAlignment="Center" Margin="0">
+                    <Button Content="SignUp" Height="40" Width="100" 
+                         Background="Transparent" 
+                         Foreground="#ab0000" 
+                         FontWeight="Bold" 
+                         BorderThickness="0" 
+                         Click="Register_Button_Click"/>
+                </Border>
+            </StackPanel>
+        </Border>
+
+        <!-- Sign In Section -->
+        <Border Grid.Column="1" CornerRadius="10" Background="White" Padding="20" VerticalAlignment="Stretch">
+            <StackPanel>
+                <TextBlock Text="Sign In" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <Border CornerRadius="10" Background="#d4ac0d" Margin="5">
+                        <Button Content="G" Width="40" Height="40" 
+                            Background="Transparent" 
+                            Foreground="#ab0000" 
+                            FontWeight="Bold" 
+                            BorderThickness="0"/>
+                    </Border>
+                    <Border CornerRadius="10" Background="#d4ac0d" Margin="5">
+                        <Button Content="f" Width="40" Height="40" 
+                            Background="Transparent" 
+                            Foreground="#ab0000" 
+                            FontWeight="Bold" 
+                            BorderThickness="0"/>
+                    </Border>
+                    <Border CornerRadius="10" Background="#d4ac0d" Margin="5">
+                        <Button Content="in" Width="40" Height="40" 
+                        Background="Transparent" 
+                        Foreground="#ab0000" 
+                        FontWeight="Bold" 
+                        BorderThickness="0"/>
+                    </Border>
+                </StackPanel>
+
+                <TextBlock Text="Or use email to sign in" FontSize="14" HorizontalAlignment="Center" Margin="0,10,0,20"/>
+
+                <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                    <TextBlock Text="Email" Width="330"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Image Source="Images/usernameIcon.png" Width="20" Height="20" Margin="25,0,5,0"/>
+                        <Border CornerRadius="5" Background="White" BorderBrush="Gray" BorderThickness="1" Width="270" Height="25">
+                            <TextBox Width="260" Height="23" 
+                 Background="Transparent" 
+                 BorderThickness="0" 
+                 VerticalContentAlignment="Center" 
+                 x:Name="UsernameTextBox"/>
+                        </Border>
+
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                    <TextBlock Text="Password" Width="330" Margin="0,15,0,0"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Image Source="Images/passwordIcon.png" Width="20" Height="20" Margin="25,0,5,0"/>
+                        <Border CornerRadius="5" Background="White" BorderBrush="Gray" BorderThickness="1" Width="270" Height="25">
+                            <PasswordBox Width="260" Height="23" 
+                                 Background="Transparent" 
+                                 BorderThickness="0" 
+                                 VerticalContentAlignment="Center" 
+                                 x:Name="PasswordTxtBox"/>
+                        </Border>
+
+                    </StackPanel>
+                </StackPanel>
+
+                <Border CornerRadius="10" Background="#d4ac0d" Margin="0,20,0,10" Width="200">
+                    <Button Content="Sign In" Height="30" 
+                         Background="Transparent" 
+                         Foreground="#ab0000" 
+                         FontWeight="Bold" 
+                         Click="Log_In_Button_Click" 
+                         BorderThickness="0"/>
+                </Border>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
